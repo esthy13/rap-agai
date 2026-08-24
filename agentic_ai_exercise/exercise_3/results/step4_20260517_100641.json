@@ -1,0 +1,1305 @@
+{
+  "config": {
+    "steps": 4,
+    "n": null,
+    "rollouts": 10,
+    "depth": 4,
+    "run_rap": true,
+    "run_base": true,
+    "model": "Qwen/Qwen3-VL-4B-Instruct-FP8",
+    "timestamp": "20260517_100641"
+  },
+  "summary": {
+    "n": 57,
+    "rap_correct": 36,
+    "rap_accuracy": 0.6316,
+    "base_correct": 16,
+    "base_accuracy": 0.2807
+  },
+  "results": [
+    {
+      "pddl": "instance-1.pddl",
+      "gt_actions": [
+        "Unstack the blue block from on top of the orange block",
+        "Put down the blue block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "rap_actions": [
+        "Unstack the blue block from on top of the orange block",
+        "Stack the blue block on top of the orange block",
+        "Unstack the blue block from on top of the orange block",
+        "Stack the blue block on top of the orange block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Unstack the blue block from on top of the orange block",
+        "Stack the blue block on top of the orange block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-2.pddl",
+      "gt_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Put down the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the red block"
+      ],
+      "rap_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Put down the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the red block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Put down the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the red block"
+      ],
+      "base_correct": true
+    },
+    {
+      "pddl": "instance-12.pddl",
+      "gt_actions": [
+        "Unstack the blue block from on top of the yellow block",
+        "Stack the blue block on top of the orange block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the red block"
+      ],
+      "rap_actions": [
+        "Unstack the blue block from on top of the yellow block",
+        "Stack the blue block on top of the orange block",
+        "Unstack the blue block from on top of the orange block",
+        "Stack the blue block on top of the orange block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Unstack the blue block from on top of the yellow block",
+        "Stack the blue block on top of the orange block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the red block"
+      ],
+      "base_correct": true
+    },
+    {
+      "pddl": "instance-16.pddl",
+      "gt_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Stack the yellow block on top of the red block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "rap_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Stack the yellow block on top of the red block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Stack the yellow block on top of the red block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "base_correct": true
+    },
+    {
+      "pddl": "instance-25.pddl",
+      "gt_actions": [
+        "Unstack the yellow block from on top of the blue block",
+        "Put down the yellow block",
+        "Unstack the blue block from on top of the red block",
+        "Stack the blue block on top of the yellow block"
+      ],
+      "rap_actions": [
+        "Unstack the yellow block from on top of the blue block",
+        "Stack the yellow block on top of the orange block",
+        "Unstack the blue block from on top of the red block",
+        "Stack the blue block on top of the yellow block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the yellow block from on top of the blue block",
+        "Stack the yellow block on top of the red block",
+        "Unstack the blue block from on top of the red block",
+        "Stack the blue block on top of the yellow block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-26.pddl",
+      "gt_actions": [
+        "Pick up the red block",
+        "Stack the red block on top of the blue block",
+        "Unstack the orange block from on top of the yellow block",
+        "Stack the orange block on top of the red block"
+      ],
+      "rap_actions": [
+        "Pick up the red block",
+        "Stack the red block on top of the blue block",
+        "Unstack the orange block from on top of the yellow block",
+        "Stack the orange block on top of the red block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Pick up the orange block",
+        "Stack the orange block on top of the red block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the red block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-30.pddl",
+      "gt_actions": [
+        "Unstack the yellow block from on top of the blue block",
+        "Stack the yellow block on top of the orange block",
+        "Unstack the blue block from on top of the red block",
+        "Stack the blue block on top of the yellow block"
+      ],
+      "rap_actions": [
+        "Unstack the yellow block from on top of the blue block",
+        "Stack the yellow block on top of the orange block",
+        "Unstack the blue block from on top of the red block",
+        "Stack the blue block on top of the yellow block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the yellow block from on top of the blue block",
+        "Stack the yellow block on top of the orange block",
+        "Unstack the blue block from on top of the red block",
+        "Stack the blue block on top of the yellow block"
+      ],
+      "base_correct": true
+    },
+    {
+      "pddl": "instance-45.pddl",
+      "gt_actions": [
+        "Pick up the blue block",
+        "Stack the blue block on top of the orange block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the blue block"
+      ],
+      "rap_actions": [
+        "Pick up the blue block",
+        "Stack the blue block on top of the orange block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the blue block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the blue block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the red block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-61.pddl",
+      "gt_actions": [
+        "Pick up the red block",
+        "Stack the red block on top of the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the red block"
+      ],
+      "rap_actions": [
+        "Pick up the red block",
+        "Stack the red block on top of the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the red block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the yellow block from on top of the blue block",
+        "Stack the yellow block on top of the red block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the red block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-64.pddl",
+      "gt_actions": [
+        "Unstack the orange block from on top of the yellow block",
+        "Put down the orange block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the orange block"
+      ],
+      "rap_actions": [
+        "Unstack the orange block from on top of the yellow block",
+        "Stack the orange block on top of the blue block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the orange block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the orange block from on top of the yellow block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-72.pddl",
+      "gt_actions": [
+        "Unstack the red block from on top of the yellow block",
+        "Put down the red block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the blue block"
+      ],
+      "rap_actions": [
+        "Unstack the red block from on top of the yellow block",
+        "Put down the red block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the blue block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the red block from on top of the yellow block",
+        "Stack the red block on top of the blue block",
+        "Unstack the blue block from on top of the orange block",
+        "Stack the blue block on top of the red block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-74.pddl",
+      "gt_actions": [
+        "Unstack the red block from on top of the blue block",
+        "Put down the red block",
+        "Unstack the blue block from on top of the yellow block",
+        "Stack the blue block on top of the red block"
+      ],
+      "rap_actions": [
+        "Unstack the red block from on top of the blue block",
+        "Put down the red block",
+        "Unstack the blue block from on top of the yellow block",
+        "Stack the blue block on top of the red block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the red block from on top of the blue block",
+        "Stack the red block on top of the blue block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-98.pddl",
+      "gt_actions": [
+        "Unstack the orange block from on top of the yellow block",
+        "Stack the orange block on top of the red block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the yellow block"
+      ],
+      "rap_actions": [
+        "Unstack the orange block from on top of the yellow block",
+        "Stack the orange block on top of the red block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the yellow block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the orange block from on top of the yellow block",
+        "Stack the orange block on top of the red block",
+        "Stack the yellow block on top of the blue block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-121.pddl",
+      "gt_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Put down the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "rap_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Put down the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Stack the yellow block on top of the red block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "base_correct": true
+    },
+    {
+      "pddl": "instance-126.pddl",
+      "gt_actions": [
+        "Unstack the blue block from on top of the red block",
+        "Put down the blue block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the red block"
+      ],
+      "rap_actions": [
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block",
+        "Unstack the orange block from on top of the blue block",
+        "Put down the orange block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Unstack the blue block from on top of the red block",
+        "Put down the blue block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the red block"
+      ],
+      "base_correct": true
+    },
+    {
+      "pddl": "instance-133.pddl",
+      "gt_actions": [
+        "Unstack the red block from on top of the blue block",
+        "Stack the red block on top of the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "rap_actions": [
+        "Unstack the red block from on top of the blue block",
+        "Stack the red block on top of the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the red block from on top of the blue block",
+        "Put down the red block",
+        "Pick up the red block",
+        "Stack the red block on top of the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "base_correct": true
+    },
+    {
+      "pddl": "instance-158.pddl",
+      "gt_actions": [
+        "Pick up the blue block",
+        "Stack the blue block on top of the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the red block"
+      ],
+      "rap_actions": [
+        "Pick up the orange block",
+        "Stack the orange block on top of the red block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the yellow block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Pick up the blue block",
+        "Stack the blue block on top of the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the red block"
+      ],
+      "base_correct": true
+    },
+    {
+      "pddl": "instance-162.pddl",
+      "gt_actions": [
+        "Unstack the blue block from on top of the orange block",
+        "Stack the blue block on top of the red block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "rap_actions": [
+        "Unstack the blue block from on top of the orange block",
+        "Stack the blue block on top of the red block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the blue block from on top of the orange block",
+        "Stack the blue block on top of the red block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-176.pddl",
+      "gt_actions": [
+        "Unstack the blue block from on top of the orange block",
+        "Put down the blue block",
+        "Unstack the orange block from on top of the red block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "rap_actions": [
+        "Unstack the blue block from on top of the orange block",
+        "Put down the blue block",
+        "Unstack the orange block from on top of the red block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the red block from on top of the yellow block",
+        "Put down the red block",
+        "Unstack the orange block from on top of the red block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-191.pddl",
+      "gt_actions": [
+        "Pick up the red block",
+        "Stack the red block on top of the blue block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the red block"
+      ],
+      "rap_actions": [
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the blue block",
+        "Unstack the yellow block from on top of the blue block",
+        "Stack the yellow block on top of the blue block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the red block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the red block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-198.pddl",
+      "gt_actions": [
+        "Unstack the red block from on top of the blue block",
+        "Put down the red block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the blue block"
+      ],
+      "rap_actions": [
+        "Unstack the red block from on top of the blue block",
+        "Put down the red block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the blue block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the red block from on top of the blue block",
+        "Unstack the blue block from on top of the orange block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the blue block",
+        "Stack the red block on top of the blue block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-201.pddl",
+      "gt_actions": [
+        "Unstack the blue block from on top of the red block",
+        "Put down the blue block",
+        "Pick up the red block",
+        "Stack the red block on top of the blue block"
+      ],
+      "rap_actions": [
+        "Unstack the blue block from on top of the red block",
+        "Stack the blue block on top of the red block",
+        "Unstack the blue block from on top of the red block",
+        "Stack the blue block on top of the orange block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Unstack the blue block from on top of the red block",
+        "Put down the blue block",
+        "Pick up the red block",
+        "Stack the red block on top of the blue block"
+      ],
+      "base_correct": true
+    },
+    {
+      "pddl": "instance-202.pddl",
+      "gt_actions": [
+        "Unstack the orange block from on top of the blue block",
+        "Put down the orange block",
+        "Unstack the blue block from on top of the red block",
+        "Stack the blue block on top of the orange block"
+      ],
+      "rap_actions": [
+        "Unstack the orange block from on top of the blue block",
+        "Put down the orange block",
+        "Unstack the blue block from on top of the red block",
+        "Stack the blue block on top of the orange block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the orange block from on top of the blue block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-203.pddl",
+      "gt_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Put down the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "rap_actions": [
+        "Unstack the blue block from on top of the red block",
+        "Stack the blue block on top of the red block",
+        "Unstack the blue block from on top of the red block",
+        "Stack the blue block on top of the red block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Put down the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "base_correct": true
+    },
+    {
+      "pddl": "instance-210.pddl",
+      "gt_actions": [
+        "Unstack the red block from on top of the yellow block",
+        "Put down the red block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the yellow block"
+      ],
+      "rap_actions": [
+        "Unstack the red block from on top of the yellow block",
+        "Put down the red block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the yellow block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the red block from on top of the yellow block",
+        "Stack the red block on top of the blue block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-216.pddl",
+      "gt_actions": [
+        "Unstack the yellow block from on top of the blue block",
+        "Put down the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "rap_actions": [
+        "Pick up the orange block",
+        "Stack the orange block on top of the yellow block",
+        "Unstack the orange block from on top of the yellow block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Unstack the yellow block from on top of the blue block",
+        "Put down the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "base_correct": true
+    },
+    {
+      "pddl": "instance-219.pddl",
+      "gt_actions": [
+        "Unstack the blue block from on top of the red block",
+        "Stack the blue block on top of the yellow block",
+        "Pick up the red block",
+        "Stack the red block on top of the orange block"
+      ],
+      "rap_actions": [
+        "Unstack the blue block from on top of the red block",
+        "Stack the blue block on top of the yellow block",
+        "Unstack the blue block from on top of the yellow block",
+        "Stack the blue block on top of the yellow block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Unstack the blue block from on top of the red block",
+        "Put down the blue block",
+        "Pick up the red block",
+        "Stack the red block on top of the orange block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the blue block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-225.pddl",
+      "gt_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Put down the yellow block",
+        "Unstack the orange block from on top of the red block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "rap_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Put down the yellow block",
+        "Unstack the orange block from on top of the red block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Put down the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-228.pddl",
+      "gt_actions": [
+        "Unstack the blue block from on top of the yellow block",
+        "Put down the blue block",
+        "Unstack the orange block from on top of the red block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "rap_actions": [
+        "Unstack the orange block from on top of the red block",
+        "Stack the orange block on top of the blue block",
+        "Unstack the orange block from on top of the blue block",
+        "Put down the orange block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Unstack the blue block from on top of the yellow block",
+        "Stack the blue block on top of the orange block",
+        "Unstack the orange block from on top of the red block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-236.pddl",
+      "gt_actions": [
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the orange block"
+      ],
+      "rap_actions": [
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the orange block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the orange block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-240.pddl",
+      "gt_actions": [
+        "Unstack the orange block from on top of the yellow block",
+        "Put down the orange block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the orange block"
+      ],
+      "rap_actions": [
+        "Unstack the orange block from on top of the yellow block",
+        "Put down the orange block",
+        "Pick up the orange block",
+        "Put down the orange block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Pick up the orange block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-265.pddl",
+      "gt_actions": [
+        "Unstack the blue block from on top of the red block",
+        "Put down the blue block",
+        "Unstack the red block from on top of the yellow block",
+        "Stack the red block on top of the blue block"
+      ],
+      "rap_actions": [
+        "Unstack the blue block from on top of the red block",
+        "Put down the blue block",
+        "Unstack the red block from on top of the yellow block",
+        "Stack the red block on top of the blue block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the red block from on top of the yellow block",
+        "Stack the red block on top of the blue block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-274.pddl",
+      "gt_actions": [
+        "Unstack the yellow block from on top of the red block",
+        "Stack the yellow block on top of the orange block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the red block"
+      ],
+      "rap_actions": [
+        "Unstack the yellow block from on top of the red block",
+        "Stack the yellow block on top of the orange block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the red block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the yellow block from on top of the red block",
+        "Stack the yellow block on top of the orange block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the red block"
+      ],
+      "base_correct": true
+    },
+    {
+      "pddl": "instance-290.pddl",
+      "gt_actions": [
+        "Unstack the red block from on top of the yellow block",
+        "Stack the red block on top of the orange block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the yellow block"
+      ],
+      "rap_actions": [
+        "Unstack the red block from on top of the yellow block",
+        "Stack the red block on top of the orange block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the yellow block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the red block from on top of the yellow block",
+        "Stack the red block on top of the orange block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the blue block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-297.pddl",
+      "gt_actions": [
+        "Unstack the yellow block from on top of the red block",
+        "Put down the yellow block",
+        "Pick up the red block",
+        "Stack the red block on top of the blue block"
+      ],
+      "rap_actions": [
+        "Unstack the blue block from on top of the orange block",
+        "Stack the blue block on top of the orange block",
+        "Unstack the yellow block from on top of the red block",
+        "Stack the yellow block on top of the blue block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Unstack the yellow block from on top of the red block",
+        "Put down the yellow block",
+        "Pick up the red block",
+        "Stack the red block on top of the blue block"
+      ],
+      "base_correct": true
+    },
+    {
+      "pddl": "instance-301.pddl",
+      "gt_actions": [
+        "Unstack the orange block from on top of the red block",
+        "Stack the orange block on top of the yellow block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the orange block"
+      ],
+      "rap_actions": [
+        "Pick up the blue block",
+        "Stack the blue block on top of the orange block",
+        "Unstack the blue block from on top of the orange block",
+        "Stack the blue block on top of the orange block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Pick up the blue block",
+        "Stack the blue block on top of the orange block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-324.pddl",
+      "gt_actions": [
+        "Pick up the red block",
+        "Stack the red block on top of the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the red block"
+      ],
+      "rap_actions": [
+        "Pick up the red block",
+        "Stack the red block on top of the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the red block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the yellow block from on top of the blue block",
+        "Stack the yellow block on top of the red block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the red block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-334.pddl",
+      "gt_actions": [
+        "Unstack the blue block from on top of the orange block",
+        "Stack the blue block on top of the yellow block",
+        "Unstack the orange block from on top of the red block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "rap_actions": [
+        "Unstack the blue block from on top of the orange block",
+        "Stack the blue block on top of the yellow block",
+        "Unstack the orange block from on top of the red block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the blue block from on top of the orange block",
+        "Stack the blue block on top of the yellow block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-335.pddl",
+      "gt_actions": [
+        "Unstack the blue block from on top of the yellow block",
+        "Stack the blue block on top of the orange block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the blue block"
+      ],
+      "rap_actions": [
+        "Unstack the blue block from on top of the yellow block",
+        "Stack the blue block on top of the orange block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the blue block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the blue block from on top of the yellow block",
+        "Stack the blue block on top of the orange block",
+        "Unstack the yellow block from on top of the red block",
+        "Stack the yellow block on top of the blue block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-346.pddl",
+      "gt_actions": [
+        "Unstack the red block from on top of the orange block",
+        "Put down the red block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the orange block"
+      ],
+      "rap_actions": [
+        "Unstack the red block from on top of the orange block",
+        "Put down the red block",
+        "Unstack the orange block from on top of the blue block",
+        "Put down the orange block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the orange block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-350.pddl",
+      "gt_actions": [
+        "Unstack the blue block from on top of the yellow block",
+        "Put down the blue block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the orange block"
+      ],
+      "rap_actions": [
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block",
+        "Unstack the orange block from on top of the blue block",
+        "Put down the orange block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Unstack the blue block from on top of the yellow block",
+        "Stack the blue block on top of the orange block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-365.pddl",
+      "gt_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Put down the yellow block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the orange block"
+      ],
+      "rap_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Stack the yellow block on top of the red block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the orange block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Put down the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-368.pddl",
+      "gt_actions": [
+        "Pick up the orange block",
+        "Stack the orange block on top of the yellow block",
+        "Pick up the red block",
+        "Stack the red block on top of the orange block"
+      ],
+      "rap_actions": [
+        "Pick up the red block",
+        "Put down the red block",
+        "Pick up the red block",
+        "Put down the red block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Pick up the red block",
+        "Stack the red block on top of the orange block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-388.pddl",
+      "gt_actions": [
+        "Unstack the blue block from on top of the yellow block",
+        "Put down the blue block",
+        "Unstack the yellow block from on top of the red block",
+        "Stack the yellow block on top of the orange block"
+      ],
+      "rap_actions": [
+        "Unstack the blue block from on top of the yellow block",
+        "Stack the blue block on top of the orange block",
+        "Unstack the yellow block from on top of the red block",
+        "Put down the yellow block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Unstack the blue block from on top of the yellow block",
+        "Stack the blue block on top of the orange block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-401.pddl",
+      "gt_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Put down the yellow block",
+        "Unstack the orange block from on top of the blue block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "rap_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Put down the yellow block",
+        "Unstack the orange block from on top of the blue block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Stack the yellow block on top of the orange block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-404.pddl",
+      "gt_actions": [
+        "Unstack the red block from on top of the orange block",
+        "Stack the red block on top of the yellow block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the red block"
+      ],
+      "rap_actions": [
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the red block",
+        "Unstack the yellow block from on top of the red block",
+        "Stack the yellow block on top of the blue block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Unstack the red block from on top of the orange block",
+        "Stack the red block on top of the yellow block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-407.pddl",
+      "gt_actions": [
+        "Unstack the yellow block from on top of the red block",
+        "Stack the yellow block on top of the blue block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "rap_actions": [
+        "Pick up the orange block",
+        "Stack the orange block on top of the yellow block",
+        "Unstack the orange block from on top of the yellow block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Unstack the yellow block from on top of the red block",
+        "Stack the yellow block on top of the blue block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "base_correct": true
+    },
+    {
+      "pddl": "instance-425.pddl",
+      "gt_actions": [
+        "Unstack the red block from on top of the orange block",
+        "Put down the red block",
+        "Unstack the orange block from on top of the yellow block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "rap_actions": [
+        "Unstack the red block from on top of the orange block",
+        "Put down the red block",
+        "Unstack the orange block from on top of the yellow block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the red block from on top of the orange block",
+        "Put down the red block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-431.pddl",
+      "gt_actions": [
+        "Unstack the blue block from on top of the yellow block",
+        "Put down the blue block",
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the blue block"
+      ],
+      "rap_actions": [
+        "Unstack the blue block from on top of the yellow block",
+        "Stack the blue block on top of the yellow block",
+        "Unstack the blue block from on top of the yellow block",
+        "Stack the blue block on top of the orange block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Unstack the blue block from on top of the yellow block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-433.pddl",
+      "gt_actions": [
+        "Unstack the blue block from on top of the yellow block",
+        "Put down the blue block",
+        "Unstack the yellow block from on top of the red block",
+        "Stack the yellow block on top of the blue block"
+      ],
+      "rap_actions": [
+        "Unstack the blue block from on top of the yellow block",
+        "Put down the blue block",
+        "Unstack the yellow block from on top of the red block",
+        "Stack the yellow block on top of the blue block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the red block from on top of the orange block",
+        "Put down the red block",
+        "Unstack the yellow block from on top of the red block",
+        "Stack the yellow block on top of the blue block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-436.pddl",
+      "gt_actions": [
+        "Unstack the orange block from on top of the red block",
+        "Put down the orange block",
+        "Pick up the red block",
+        "Stack the red block on top of the blue block"
+      ],
+      "rap_actions": [
+        "Unstack the orange block from on top of the red block",
+        "Stack the orange block on top of the blue block",
+        "Unstack the orange block from on top of the blue block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Pick up the orange block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-444.pddl",
+      "gt_actions": [
+        "Unstack the orange block from on top of the yellow block",
+        "Put down the orange block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the yellow block"
+      ],
+      "rap_actions": [
+        "Unstack the orange block from on top of the yellow block",
+        "Stack the orange block on top of the red block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the yellow block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the orange block from on top of the yellow block",
+        "Stack the orange block on top of the blue block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-445.pddl",
+      "gt_actions": [
+        "Unstack the yellow block from on top of the blue block",
+        "Put down the yellow block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the orange block"
+      ],
+      "rap_actions": [
+        "Unstack the yellow block from on top of the blue block",
+        "Stack the yellow block on top of the white block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the orange block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the yellow block from on top of the blue block",
+        "Put down the yellow block",
+        "Pick up the white block",
+        "Put down the white block",
+        "Pick up the blue block",
+        "Stack the blue block on top of the orange block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-471.pddl",
+      "gt_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Stack the yellow block on top of the red block",
+        "Unstack the orange block from on top of the blue block",
+        "Stack the orange block on top of the white block"
+      ],
+      "rap_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Stack the yellow block on top of the red block",
+        "Unstack the orange block from on top of the blue block",
+        "Stack the orange block on top of the white block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Stack the yellow block on top of the red block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the white block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-477.pddl",
+      "gt_actions": [
+        "Unstack the white block from on top of the blue block",
+        "Stack the white block on top of the red block",
+        "Pick up the orange block",
+        "Stack the orange block on top of the white block"
+      ],
+      "rap_actions": [
+        "Pick up the orange block",
+        "Stack the orange block on top of the white block",
+        "Pick up the red block",
+        "Stack the red block on top of the orange block"
+      ],
+      "rap_correct": false,
+      "base_actions": [
+        "Unstack the white block from on top of the blue block",
+        "Stack the white block on top of the red block",
+        "Unstack the blue block from on top of the yellow block",
+        "Stack the blue block on top of the orange block"
+      ],
+      "base_correct": false
+    },
+    {
+      "pddl": "instance-494.pddl",
+      "gt_actions": [
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the orange block",
+        "Pick up the white block",
+        "Stack the white block on top of the red block"
+      ],
+      "rap_actions": [
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the orange block",
+        "Pick up the white block",
+        "Stack the white block on top of the red block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Pick up the yellow block",
+        "Stack the yellow block on top of the orange block",
+        "Pick up the white block",
+        "Stack the white block on top of the red block"
+      ],
+      "base_correct": true
+    },
+    {
+      "pddl": "instance-501.pddl",
+      "gt_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Stack the yellow block on top of the blue block",
+        "Unstack the orange block from on top of the red block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "rap_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Stack the yellow block on top of the blue block",
+        "Unstack the orange block from on top of the red block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "rap_correct": true,
+      "base_actions": [
+        "Unstack the yellow block from on top of the orange block",
+        "Stack the yellow block on top of the blue block",
+        "Unstack the orange block from on top of the red block",
+        "Stack the orange block on top of the yellow block"
+      ],
+      "base_correct": true
+    }
+  ]
+}

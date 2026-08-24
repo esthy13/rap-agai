@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+
+# Generated database (rebuilt locally via ingest_concept.py --auto)
+database/faiss_index.bin
+database/metadata.json
+database/images/
+
+# Downloaded dataset (too large to commit)
+yollava-data/
+
+*.pdf
