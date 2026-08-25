@@ -3,9 +3,9 @@ Exercise 3 for the Agentic AI course at the University of Bielefeld
 
 An implementation and evaluation of **Reasoning via Planning (RAP)**: a search-augmented approach that uses a large language model as a world model and Monte Carlo Tree Search (MCTS) to solve multi-step planning problems.
 
-The project reproduces RAP-style reasoning on Blocksworld with `Qwen3-VL-4B`, compares it with a direct-LLM baseline, and evaluates every generated plan using a deterministic simulator. It was developed by **Cono Cirone and Esther Giuliano** for the Agentic AI Seminar, Summer Semester 2026, at Bielefeld University.
+The project reproduces RAP-style reasoning on Blocksworld with `Qwen3-VL-4B`, compares it with a direct-LLM baseline, and evaluates every generated plan using a deterministic simulator.
 
-[View the tutorial slides](docs/AGAI%203.%20tutorial.pdf)
+[View the project presentation](docs/AGAI%203.%20tutorial.pdf)
 
 ## Why RAP?
 
