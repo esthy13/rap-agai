@@ -1,121 +1,97 @@
-# Exercise Repository
+# RAP for Agentic AI
 
-Welcome to the course exercise repository! This README will guide you through setting up your development environment and submitting your group work.
+An experimental implementation of **Reasoning via Planning (RAP)** for language-model agents. The project combines an LLM-based world model with Monte Carlo Tree Search (MCTS) to solve Blocksworld planning tasks, then evaluates the search-based agent against a direct-LLM baseline.
 
-## Getting Started
+Developed as part of the Agentic AI Seminar (Summer Semester 2026) at Bielefeld University, this repository showcases practical work in agentic systems, search algorithms, prompt engineering, and reproducible evaluation.
 
-### 1. Clone the Repository
+## Highlights
 
-Clone this repository to your local machine:
+- Implements a RAP-style planning pipeline for Blocksworld.
+- Uses an LLM as both a state-transition model and action evaluator.
+- Applies MCTS to explore and rank candidate plans.
+- Compares search-augmented reasoning with a direct prompting baseline.
+- Evaluates 2-, 4-, and 6-step planning problems and stores structured JSON results.
+- Includes reusable AgentScope chat and embedding examples.
+
+## Project structure
+
+```text
+.
+├── example.py                # Minimal AgentScope chat agent
+├── embedding_example.py      # Embedding and chat example
+├── exercise_3/
+│   ├── run.py                # Experiment CLI
+│   ├── config.py             # Shared paths and model identifiers
+│   ├── world_model.py        # LLM-based transition and scoring model
+│   ├── mcts.py               # Monte Carlo Tree Search
+│   ├── mcts_node.py          # Blocksworld search node
+│   ├── search.py             # RAP search orchestration
+│   ├── baseline.py           # Direct-LLM comparison
+│   ├── utils.py              # PDDL parsing and plan evaluation
+│   ├── RAP/                  # RAP reference code and benchmark data
+│   └── results/              # Example experiment outputs
+└── tests/                    # Automated tests
+```
+
+## Setup
+
+Requirements: Python 3.13+, [`uv`](https://docs.astral.sh/uv/), and access to an OpenAI-compatible model endpoint.
 
 ```bash
-git clone <repository-url>
-cd <repository-name>
+git clone https://github.com/esthy13/rap-agai.git
+cd rap-agai
+uv pip install -e '.[dev]'
 ```
 
-### 2. Set Up Your Environment with `uv`
+Create a `.env` file in the repository root:
 
-This project uses [uv](https://github.com/astral-sh/uv) for Python package management.
+```dotenv
+LLM_API_KEY=your_api_key
+LLM_BASE_URL=https://your-endpoint.example/v1
+```
 
-Install the project in editable mode:
+Never commit credentials; `.env` is ignored by Git.
+
+## Run the experiments
+
+Run RAP and the direct-LLM baseline on five 2-step tasks:
 
 ```bash
-uv pip install -e .
+uv run python -m exercise_3.run --steps 2 --n 5
 ```
 
-This allows you to make changes to the code that are immediately reflected without reinstalling.
-
-### 3. Update Dependencies
-
-When adding new dependencies for your submission, update the `pyproject.toml` file:
-
-```toml
-[project]
-dependencies = [
-    "your-package>=1.0.0",
-    # Add your required packages here
-]
-```
-
-After updating `pyproject.toml`, sync your environment:
+Useful variants:
 
 ```bash
-uv pip install -e .
+# RAP only
+uv run python -m exercise_3.run --steps 4 --n 10 --no-baseline
+
+# Direct-LLM baseline only
+uv run python -m exercise_3.run --steps 6 --n 10 --no-rap
+
+# Tune the search budget
+uv run python -m exercise_3.run --steps 4 --n 10 --rollouts 20 --depth 6
 ```
 
-### 4. Create `.env` File
-Create a `.env` file in the root directory of the project with the following content:
-```
-LLM_API_KEY=sk-1234
-LLM_BASE_URL=http://localhost:4000
-```
-Replace `sk-1234` with your actual API key and `http://localhost:4000` with base URL of the API, described in moodle.
-*Do not* commit this file to the repository.
+Results are written incrementally to `exercise_3/results/`, preserving partial progress if a run is interrupted. See [`exercise_3/README.md`](exercise_3/README.md) for the full CLI reference and result format.
 
-## Workflow
+## Quality checks
 
-### Working with GitLab Issues and Merge Requests
-1. Exercises are handled via GitLab Issues and Merge Requests (MRs).
-
-2. **Merge Request:** Create a Merge Request (MR). Assign yourself to the MR.       
-3. **Create a Branch:** Create a new branch for your work from the Merge Request page from the `exercise_1` branch.
-4. **Naming Convention:** Both your **branch name** and the **folder** you create within `exercise_1/` MUST follow this pattern:
-    `{exercise_short}_group_{character}`
-    *   `{exercise_short}` is provided in the GitLab issue description.
-    *   `group_{character}` represents your assigned group (e.g., `group_a`).
-    *   Example: `react_group_a`
-
-## Code Quality Standards
-
-We expect high-quality, professional code submissions. Please adhere to the following:
-
-### Code Style
-- Follow [PEP 8](https://pep8.org/) Python style guidelines
-- Use meaningful variable and function names
-- Keep functions focused and concise (single responsibility principle)
-- Maintain consistent indentation and formatting
-
-### Documentation
-- **All functions, classes, and modules must be documented** using [Google-style docstrings](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings)
-- Include clear descriptions, parameter types, return types, and examples where appropriate
-
-Example:
-```python
-def calculate_average(numbers: list[float]) -> float:
-    """Calculate the arithmetic mean of a list of numbers.
-
-    Args:
-        numbers: A list of numerical values.
-
-    Returns:
-        The average of the input numbers.
-
-    Raises:
-        ValueError: If the list is empty.
-
-    Examples:
-        >>> calculate_average([1, 2, 3, 4, 5])
-        3.0
-    """
-    if not numbers:
-        raise ValueError("Cannot calculate average of empty list")
-    return sum(numbers) / len(numbers)
+```bash
+uv run ruff check .
+uv run pytest
 ```
 
-### Testing
-- Write unit tests for your code
-- Ensure all tests pass before submitting your MR
-- Aim for meaningful test coverage
+GitLab CI runs linting, tests, and generated API documentation.
 
-## Documentation Website
+## Technical focus
 
-This repository automatically generates documentation from your code docstrings:
+This project demonstrates experience with Python, asynchronous LLM APIs, AgentScope, MCTS, PDDL planning, experiment design, baseline comparison, structured evaluation, and CI/CD.
 
-- **Documentation Tool**: [pdoc](https://pdoc.dev/)
-- **Trigger**: GitLab CI pipeline on the `main` branch
-- **Format**: Google-style docstrings (as shown above)
+## Attribution
 
-Your properly formatted docstrings will be automatically compiled into a browsable documentation website when code is merged to `main`. This makes it essential to document your code thoroughly!
+The approach and bundled reference implementation build on *Reasoning with Language Model is Planning with World Model*. Third-party RAP code retains its original license in [`exercise_3/RAP/LICENSE`](exercise_3/RAP/LICENSE).
 
-## Need Help?
-Via Moodle or florian.schroeder@techfak.de
+## License
+
+The repository is released under the terms in [`LICENSE`](LICENSE).

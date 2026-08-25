@@ -2,7 +2,7 @@
 
 ## 1. Prerequisites
 
-- Python 3.11+ (the venv was built with Python 3.14)
+- Python 3.13+
 - [`uv`](https://github.com/astral-sh/uv) (recommended) **or** standard `pip`
 - API access: a key and base URL for an OpenAI-compatible endpoint
 
@@ -12,40 +12,17 @@
 
 ### Create and activate the virtual environment
 
-```bash
-cd agentic-ai-exercise/agentic_ai_exercise/exercise_3
-
-python -m venv rap_venv
-source rap_venv/bin/activate        # macOS / Linux
-# rap_venv\Scripts\activate         # Windows
-```
-
-### Install dependencies
+From the repository root, install the project and development tools:
 
 ```bash
-# with uv (faster)
-uv pip install -r requirements.txt
-
-# or with pip
-pip install -r requirements.txt
+uv pip install -e '.[dev]'
 ```
-
-### Make the project importable from within the venv
-
-```bash
-# create a .pth file so `agentic_ai_exercise` can be imported
-echo "/path/to/agentic-ai-exercise" \
-  > rap_venv/lib/python3.*/site-packages/agentic_ai_exercise.pth
-```
-
-Replace `/path/to/agentic-ai-exercise` with the absolute path to the repo root
-(the folder that contains `pyproject.toml`).
 
 ---
 
 ## 3. API Credentials
 
-Create a `.env` file in the **repo root** (`agentic-ai-exercise/.env`):
+Create a `.env` file in the **repo root** (`rap-agai/.env`):
 
 ```
 LLM_API_KEY=your_api_key_here
@@ -58,34 +35,32 @@ These are loaded automatically by `run.py` via `python-dotenv`.
 
 ## 4. Running the Experiment
 
-All commands below assume:
-- the `rap_venv` is active
-- you are in the repo root (`agentic-ai-exercise/`)
+All commands below assume you are in the repository root (`rap-agai/`).
 
 ### Full experiment (RAP + baseline, 2-step problems, 5 problems)
 
 ```bash
-python -m agentic_ai_exercise.exercise_3.run --steps 2 --n 5
+uv run python -m exercise_3.run --steps 2 --n 5
 ```
 
 ### RAP only (no baseline)
 
 ```bash
-python -m agentic_ai_exercise.exercise_3.run --steps 2 --n 5 --no-baseline
+uv run python -m exercise_3.run --steps 2 --n 5 --no-baseline
 ```
 
 ### Baseline only (no RAP / no MCTS)
 
 ```bash
-python -m agentic_ai_exercise.exercise_3.run --steps 2 --n 5 --no-rap
+uv run python -m exercise_3.run --steps 2 --n 5 --no-rap
 ```
 
 ### All difficulty levels used in the paper
 
 ```bash
-python -m agentic_ai_exercise.exercise_3.run --steps 2 --n 10
-python -m agentic_ai_exercise.exercise_3.run --steps 4 --n 10
-python -m agentic_ai_exercise.exercise_3.run --steps 6 --n 10
+uv run python -m exercise_3.run --steps 2 --n 10
+uv run python -m exercise_3.run --steps 4 --n 10
+uv run python -m exercise_3.run --steps 6 --n 10
 ```
 
 ### All CLI flags

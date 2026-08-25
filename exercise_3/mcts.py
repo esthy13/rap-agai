@@ -18,7 +18,6 @@ Standard Monte Carlo Tree Search adapted for RAP:
 
 import math
 from collections import defaultdict
-from typing import Optional
 
 from .mcts_node import BlocksworldMCTSNode
 

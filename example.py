@@ -1,15 +1,14 @@
 import asyncio
 import os
 
-from dotenv import load_dotenv
-
 from agentscope.agent import AgentBase
 from agentscope.formatter import OpenAIChatFormatter
 from agentscope.memory import InMemoryMemory
 from agentscope.message import Msg
 from agentscope.model import OpenAIChatModel
+from dotenv import load_dotenv
 
-from agentic_ai_exercise import ENV_PATH, QWEN3_VL_4B_Instruct
+from exercise_3.config import ENV_PATH, QWEN3_VL_4B_Instruct
 
 # Load API key and base URL from .env
 load_dotenv(ENV_PATH)

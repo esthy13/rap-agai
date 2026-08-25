@@ -1,10 +1,11 @@
 [project]
-name = "agentic_ai_exercise"
+name = "rap-agai"
 version = "0.1.0"
-description = "Repo for the Agentic AI Seminar SoSe 2026 Bielefeld University"
+description = "Reasoning-via-planning experiments with LLM world models and Monte Carlo Tree Search"
 requires-python = ">=3.13"
 dependencies = [
-    "agentscope[full]",
+    "agentscope[full]==1.0.20",
+    "python-dotenv>=1.2.2",
 ]
 
 [project.optional-dependencies]
@@ -13,3 +14,16 @@ dev = [
     "ruff",
     "pdoc",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.ruff]
+exclude = ["exercise_3/RAP"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.setuptools.packages.find]
+include = ["exercise_3*"]
+exclude = ["exercise_3.RAP*"]

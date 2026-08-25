@@ -18,7 +18,6 @@ When a node is expanded the steps are:
   3. one child per action  — child prompt = current prompt + [ACTION depth+1] <action>
 """
 
-import math
 import random
 import re
 import sys
@@ -31,9 +30,9 @@ _RAP_DIR = Path(__file__).parent / "RAP"
 if str(_RAP_DIR) not in sys.path:
     sys.path.insert(0, str(_RAP_DIR))
 
-from rap.utils.blocksworld import apply_change, generate_all_actions
+from rap.utils.blocksworld import apply_change, generate_all_actions  # noqa: E402
 
-from .world_model import BlocksworldWorldModel
+from .world_model import BlocksworldWorldModel  # noqa: E402
 
 
 class BlocksworldMCTSNode:

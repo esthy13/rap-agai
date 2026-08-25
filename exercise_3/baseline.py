@@ -10,8 +10,6 @@ import re
 
 from agentscope.model import OpenAIChatModel
 
-from agentic_ai_exercise import QWEN3_VL_4B_Instruct
-
 
 async def baseline_plan(
     initial_state: str,

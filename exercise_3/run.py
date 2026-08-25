@@ -4,8 +4,8 @@ Step 7 — Blocksworld Experiment Runner
 Reproduces the Blocksworld experiments from the RAP paper and compares
 with a direct-LLM baseline (no MCTS).
 
-Usage (from the agentic-ai-exercise root with the ama venv active):
-    python -m agentic_ai_exercise.exercise_3.run
+Usage (from the repository root with the virtual environment active):
+    python -m exercise_3.run
 
 Options (via CLI flags or editing the CONFIG block below):
     --steps   2|4|6   dataset to use   (default: 2)
@@ -16,33 +16,34 @@ Options (via CLI flags or editing the CONFIG block below):
     --no-baseline     skip baseline; evaluate RAP only
 """
 
+import argparse
 import asyncio
 import json
-import sys
 import os
-import argparse
+import sys
 from datetime import datetime
 from pathlib import Path
+
 from dotenv import load_dotenv
 
 # ── make the RAP utilities importable ──────────────────────────────
 RAP_DIR = Path(__file__).parent / "RAP"
 sys.path.insert(0, str(RAP_DIR))
 
-from agentic_ai_exercise import ENV_PATH, QWEN3_VL_4B_Instruct
-from agentic_ai_exercise.exercise_3.world_model import BlocksworldWorldModel
-from agentic_ai_exercise.exercise_3.search import blocksworld_rap_search, extract_plan
-from agentic_ai_exercise.exercise_3.baseline import baseline_plan
-from agentic_ai_exercise.exercise_3.utils import (
-    parse_pddl,
+from exercise_3.baseline import baseline_plan  # noqa: E402
+from exercise_3.config import ENV_PATH, QWEN3_VL_4B_Instruct  # noqa: E402
+from exercise_3.search import blocksworld_rap_search, extract_plan  # noqa: E402
+from exercise_3.utils import (  # noqa: E402
     evaluate_plan,
+    parse_pddl,
     pddl_plan_to_actions,
 )
+from exercise_3.world_model import BlocksworldWorldModel  # noqa: E402
 
 # ── Load API credentials ────────────────────────────────────────────
 load_dotenv(ENV_PATH)
-API_KEY  = os.environ["LLM_API_KEY"]
-API_BASE = os.environ["LLM_BASE_URL"]
+API_KEY = os.getenv("LLM_API_KEY")
+API_BASE = os.getenv("LLM_BASE_URL")
 
 # ── Paths ────────────────────────────────────────────────────────────
 DATA_DIR   = Path(__file__).parent / "RAP" / "data" / "blocksworld"
@@ -259,8 +260,10 @@ def print_results(results: list[dict], steps: int, run_rap: bool, run_base: bool
 
     # Per-instance table
     header = f"  {'Instance':<30}  {'GT':^5}"
-    if run_rap:  header += f"  {'RAP':^5}"
-    if run_base: header += f"  {'Base':^5}"
+    if run_rap:
+        header += f"  {'RAP':^5}"
+    if run_base:
+        header += f"  {'Base':^5}"
     print(header)
     print("  " + "-" * (len(header) - 2))
 
@@ -292,6 +295,12 @@ async def main():
         help="Path to save results JSON (default: results/step<N>_<timestamp>.json)",
     )
     args = parser.parse_args()
+
+    if not API_KEY or not API_BASE:
+        parser.error(
+            f"LLM_API_KEY and LLM_BASE_URL must be set in {ENV_PATH} "
+            "or in the environment"
+        )
 
     run_rap  = not args.no_rap
     run_base = not args.no_baseline

@@ -363,7 +363,7 @@ The run script orchestrates everything:
 
 ```bash
 # Run from exercise_3/ with rap_venv active
-python -m agentic_ai_exercise.exercise_3.run --steps 2 --n 3
+python -m exercise_3.run --steps 2 --n 3
 ```
 
 ---
@@ -444,18 +444,18 @@ same qualitative pattern should hold.
 
 ```bash
 # Activate the environment (from the project root)
-source agentic_ai_exercise/exercise_3/rap_venv/bin/activate
-cd agentic_ai_exercise/exercise_3
+source exercise_3/rap_venv/bin/activate
+cd exercise_3
 
 # Quick sanity check: 3 problems, baseline only (3 LLM calls)
-python -m agentic_ai_exercise.exercise_3.run --steps 2 --n 3 --no-rap
+python -m exercise_3.run --steps 2 --n 3 --no-rap
 
 # Step-2 full run: 30 problems, both methods (~20-40 min)
-python -m agentic_ai_exercise.exercise_3.run --steps 2
+python -m exercise_3.run --steps 2
 
 # All three difficulty levels (run sequentially)
 for s in 2 4 6; do
-  python -m agentic_ai_exercise.exercise_3.run --steps $s
+  python -m exercise_3.run --steps $s
 done
 ```
 
